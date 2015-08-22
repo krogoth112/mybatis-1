@@ -1,9 +1,6 @@
 package com.bit2015.mybatis.dao.test;
 
-import java.sql.SQLException;
 import java.util.List;
-
-import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,7 +10,8 @@ import com.bit2015.mybatis.vo.EmailListVo;
 public class EmailListTest {
 	public static void main(String[] args) {
 		// 초기 작업
-		ApplicationContext factory = new ClassPathXmlApplicationContext( "applicationContext.xml" );
+		ApplicationContext factory = 
+			new ClassPathXmlApplicationContext( "applicationContext.xml" );
 		EmailListDao dao =  
 		( EmailListDao ) factory.getBean( "emailListDao" );
 		
