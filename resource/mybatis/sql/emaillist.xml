@@ -3,7 +3,7 @@
 
 <mapper namespace="emaillist">
 	
-	<resultMap type="EmailListVo" id="resultMapList">
+	<resultMap type="EmailListVo" id="ListMap">
 		<result column="no" property="no"/>
 		<result column="first_name" property="firstName"/>
 		<result column="last_name" property="lastName"/>
@@ -14,16 +14,16 @@
 		<![CDATA[
 		insert
 		  into email_list
-		values ( email_list_no_seq.nextval, #firstName#, #lastName#, #email# )
+		values ( email_list_no_seq.nextval, #{firstName}, #{lastName}, #{email} )
 		]]>  
 	</insert>
 	
-	<select id="list" resultMap="resultMapList">
+	<select id="list" resultMap="ListMap">
 		<![CDATA[
 		select no,
-			     first_name,
-			     last_name,
-			     email
+			   first_name,
+			   last_name,
+			   email
 		  from email_list
 		]]>  
 	</select>

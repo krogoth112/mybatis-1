@@ -3,13 +3,21 @@
 
 <mapper namespace="member">
 	
-	<select id="getMember"  resultType="MemberVo"  parameterType="MemberVo">
+	<select id="getMember" resultType="MemberVo" parameterType="map">
 		<![CDATA[
 		select * 
 		  from member 
-		where email = #email# 
-		   and password = #password#
+		 where email = #{email} 
+		   and password = #{password}
 		]]>  
 	</select>
 
+	
+	<insert id="insert" parameterType="UserVo">
+		<![CDATA[
+		insert
+		  into member
+		values ( member_no_seq.nextval, #{name}, #{email}, #{password}, #{gender} )
+		]]>	
+	</insert>
 </mapper>

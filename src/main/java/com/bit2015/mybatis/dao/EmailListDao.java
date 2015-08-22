@@ -25,5 +25,4 @@ public class EmailListDao {
 		List<EmailListVo> list = sqlSessionTemplate.selectList( "emaillist.list" );
 		return list;
 	}
-
 }
